@@ -22,3 +22,10 @@ if(word == rword) {
 else{
     console.log(`${word} is not palindrome`)
 }
+
+
+
+
+
+
+
