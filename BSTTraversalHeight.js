@@ -109,6 +109,24 @@ inOrder(node = this.root, result = []) {
 
 }
 
+PreOrder(node = this.root, result = []){
+    if(node !== null) {
+         result.push(node.data)
+        this.PreOrder(node.left, result)
+        this.PreOrder(node.right, result)
+    }
+    return result;
+}
+
+PostOrder(node = this.root, result =[]){
+    if(node !== null) {
+        this.PostOrder(node.left, result)
+        this.PostOrder(node.right, result)
+        result.push(node.data);
+    }
+    return result;
+}
+
 }
 
 
@@ -120,11 +138,16 @@ bst.add(15);
 bst.add(45);
 bst.add(66);
 bst.add(88);
+bst.add(8);
+bst.add(18);
+
 
 
 console.log("Min:", bst.findmin());
 console.log("Max:", bst.findmax());
 console.log("search 15", bst.contains(15));
 console.log("search 15", bst.contains(88));
-console.log("sorted:", bst.inOrder());
+console.log("Inorder sorted:", bst.inOrder());
+console.log("Preorder sorted:", bst.PreOrder());
+console.log("Postorder sorted:", bst.PostOrder());
 
